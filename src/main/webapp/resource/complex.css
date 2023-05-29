@@ -1,0 +1,110 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #1D4350;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A43931, #1D4350);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A43931, #1D4350);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+header {
+    color: white;
+}
+
+header {
+    padding: 0 6px;
+    text-align: center;
+}
+
+nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+nav ul {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #886755;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+
+nav li a:hover {
+    background-color: #111;
+}
+
+nav li a.active-nav:hover {
+    color: white;
+}
+
+article {
+    padding: 0 6px;
+    background: #e2bda9;
+}
+
+.function-color {
+    color: blue;
+}
+
+.active-nav {
+    background-color: #b0d382;
+    color: black;
+}
+
+input {
+    display: inline-block;
+    width: 100%;
+}
+
+textarea {
+    display: inline-block;
+    width: 100%;
+}
+
+.btn-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.comment-section {
+    background-color: antiquewhite;
+    padding-top: 20px;
+}
+
+input[type=submit], input[type=reset] {
+    width: fit-content;
+}
+
+#form-error p {
+    color: red;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    nav li {
+        float: initial;
+    }
+}

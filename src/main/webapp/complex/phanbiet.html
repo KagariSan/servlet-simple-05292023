@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Phan viet let va var</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../resource/complex.css'>
+    <script src='../resource/complex.js'></script>
+</head>
+
+<body>
+    <header>
+        <h1>Phan Biet Let va Var</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a class="active-nav" href="phanbiet.html">Phan biet let va var</a></li>
+            <li><a href="khacnhau.html">Khac nhau giua substring, substr va slice</a></li>
+            <li><a href="momentjs.html">MomentJS</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>
+            Scoping rules
+        </h1>
+        <p>
+            Main difference is scoping rules. Variables declared by var keyword are scoped to the immediate function body (hence the function scope) while let variables are scoped to the immediate enclosing block denoted by { } (hence the block scope).
+        </p>
+        <pre><code><span class="function-color">function</span> run() {
+    var foo = "Foo";
+    let bar = "Bar";
+    
+    console.log(foo, bar); // Foo Bar
+
+    {
+        var moo = "Mooo"
+        let baz = "Bazz";
+        console.log(moo, baz); // Mooo Bazz
+    }
+    
+    console.log(moo); // Mooo
+    console.log(baz); // ReferenceError
+}
+
+run();</code></pre>
+        <p>
+            The reason why let keyword was introduced to the language was function scope is confusing and was one of the main sources of bugs in JavaScript.
+        </p>
+        <pre><code>var funcs = [];
+// let's create 3 functions
+for (var i = 0; i < 3; i++) {
+  // and store them in funcs
+  funcs[i] = function() {
+    // each should log its value.
+    console.log("My value: " + i);
+  };
+}
+for (var j = 0; j < 3; j++) {
+  // and now let's run each one to see
+  funcs[j]();
+}</code></pre>
+        <p>
+            <b>My value: 3</b> was output to console each time <b>funcs[j]();</b> was invoked since anonymous functions were bound to the same variable. People had to create immediately invoked functions to capture correct value from the loops but that
+            was also hairy.
+        </p>
+    </article>
+
+    <div class="comment-section">
+        <div>
+            <form name="formCmt" action="" method="post" style="width: 400px; margin:auto" onsubmit="return validateFormComment()">
+                <h1>Binh luan</h1>
+                <label for="fname">Email:</label>
+                <input type="text" name="email" id="email">
+                <label for="fname">Tieu De:</label>
+                <input type="text" name="title" id="title">
+                <label for="fname">Noi Dung:</label>
+                <textarea type="text" name="content" id="content">
+                </textarea>
+                <div class="btn-section">
+                    <input type="reset" value="Xoa noi dung">
+                    <input type="submit" value="Binh luan">
+                </div>
+            </form>
+        </div>
+
+        <div id="comment" class="comment-black">
+            <div>
+                <h3>Bai viet rat hay</h3>
+                <span>hocsinhtapcode@gmail.com.vn</span>
+                <div>Bai viet rat hay</div>
+            </div>
+            <div>
+                <h3>Bai viet rat hay</h3>
+                <span>hocsinhtapcode@gmail.com.vn</span>
+                <div>Bai viet rat hay</div>
+            </div>
+            <div>
+                <h3>Bai viet rat hay</h3>
+                <span>hocsinhtapcode@gmail.com.vn</span>
+                <div>Bai viet rat hay</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
